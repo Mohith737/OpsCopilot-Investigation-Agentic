@@ -1,0 +1,21 @@
+node_modules/
+__pycache__/
+*.pyc
+*.db
+.env
+.venv/
+dist/
+.DS_Store
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+*.egg-info/
+htmlcov/
+.coverage
+
+# ADK generated runtime/eval artifacts (do not commit)
+**/.adk/
+**/.adk/**
+**/eval_history/
+**/eval_history/**
+**/*.evalset_result.json
