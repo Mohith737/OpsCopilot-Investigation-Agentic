@@ -31,10 +31,10 @@ def upgrade() -> None:
         """
         UPDATE users AS u
         SET
-            refresh_token_hash = t.token_hash,
-            refresh_token_issued_at = t.issued_at,
-            refresh_token_expires_at = t.expires_at,
-            refresh_token_revoked_at = t.revoked_at
+            refresh_token_hash=see .env file
+            refresh_token_issued_at=see .env file
+            refresh_token_expires_at=see .env file
+            refresh_token_revoked_at=see .env file
         FROM (
             SELECT DISTINCT ON (user_id)
                 user_id, token_hash, issued_at, expires_at, revoked_at
@@ -75,3 +75,5 @@ def downgrade() -> None:
     op.drop_column("users", "refresh_token_expires_at")
     op.drop_column("users", "refresh_token_issued_at")
     op.drop_column("users", "refresh_token_hash")
+
+

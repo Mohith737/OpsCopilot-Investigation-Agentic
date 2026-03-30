@@ -11,7 +11,7 @@ from app.core import config as config_module
 from app.core.config import get_settings
 from app.main import app
 
-TEST_SECRET_KEY = "test-only-secret-key-at-least-32-bytes-long"
+TEST_SECRET_KEY=see .env file
 
 
 @pytest.fixture(autouse=True)
@@ -43,3 +43,5 @@ async def client() -> AsyncGenerator[AsyncClient, None]:
     transport = ASGITransport(app=app)
     async with AsyncClient(transport=transport, base_url="http://test") as ac:
         yield ac
+
+

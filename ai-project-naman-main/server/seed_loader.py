@@ -36,7 +36,7 @@ REPLACE_TABLES_ON_SEED: set[str] = {"incident_services"}
 
 
 def get_connection() -> psycopg2.extensions.connection:
-    database_url = os.getenv("DATABASE_URL")
+    database_url=see .env file
     if database_url:
         sync_url = database_url.replace("postgresql+asyncpg://", "postgresql://", 1)
         return psycopg2.connect(sync_url)
@@ -45,7 +45,7 @@ def get_connection() -> psycopg2.extensions.connection:
     db_port = os.getenv("DB_PORT")
     db_name = os.getenv("DB_NAME")
     db_user = os.getenv("DB_USER")
-    db_password = os.getenv("DB_PASSWORD")
+    db_password=see .env file
 
     missing = [
         key
@@ -76,7 +76,7 @@ def get_connection() -> psycopg2.extensions.connection:
         port=int(db_port),
         dbname=db_name,
         user=db_user,
-        password=db_password,
+        password=see .env file
     )
 
 
@@ -197,3 +197,5 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+

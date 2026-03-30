@@ -51,8 +51,8 @@ async def do_login(body: LoginRequest, db: AsyncSession = Depends(db_session)) -
     if not access_token or not refresh_token:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid credentials")
     return TokenResponse(
-        access_token=access_token,
-        refresh_token=refresh_token,
+        access_token=see .env file
+        refresh_token=see .env file
         user=UserOut.model_validate(user),
     )
 
@@ -65,8 +65,8 @@ async def do_refresh(body: RefreshRequest, db: AsyncSession = Depends(db_session
             status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid refresh token"
         )
     return TokenResponse(
-        access_token=access_token,
-        refresh_token=refresh_token,
+        access_token=see .env file
+        refresh_token=see .env file
         user=UserOut.model_validate(user),
     )
 
@@ -79,3 +79,5 @@ async def do_logout(body: LogoutRequest, db: AsyncSession = Depends(db_session))
             status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid refresh token"
         )
     return LogoutResponse(success=True)
+
+

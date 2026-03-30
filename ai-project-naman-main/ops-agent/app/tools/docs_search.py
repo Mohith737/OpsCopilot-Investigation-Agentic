@@ -39,7 +39,7 @@ def search_docs(
 ) -> dict[str, Any]:
     source = "search_docs"
     try:
-        query_tokens = _tokenize(query)
+        query_tokens=see .env file
         if not query_tokens:
             return make_no_data_response(source).model_dump()
 
@@ -143,10 +143,10 @@ def _score_document(
     query_tokens: set[str],
     service: str | None,
 ) -> float:
-    title_tokens = _tokenize(str(doc.get("id") or ""))
-    tag_tokens = _tokenize(" ".join(str(t) for t in doc.get("tags", [])))
-    category_tokens = _tokenize(str(doc.get("category") or ""))
-    snippet_tokens = _tokenize(snippet)
+    title_tokens=see .env file
+    tag_tokens=see .env file
+    category_tokens=see .env file
+    snippet_tokens=see .env file
 
     score = 0.0
     score += 1.2 * len(query_tokens & title_tokens)
@@ -199,7 +199,7 @@ def _best_line_index(lines: list[str], query_tokens: set[str]) -> int | None:
     )
 
     for idx, line in enumerate(lines):
-        line_tokens = _tokenize(line)
+        line_tokens=see .env file
         overlap = len(query_tokens & line_tokens)
         if overlap == 0:
             continue
@@ -259,3 +259,5 @@ def _truncate_sentence(text: str, limit: int) -> str:
     if boundary > 0:
         return cut[:boundary].strip()
     return cut.strip()
+
+

@@ -83,7 +83,7 @@ async def test_chat_session_access_is_user_scoped(
         email="other@example.com",
         full_name="Other User",
         role="operations_engineer",
-        password_hash=hash_password("otherpass"),
+        password_hash=see .env file
     )
     db.add(other_user)
     await db.commit()
@@ -103,3 +103,5 @@ async def test_chat_session_access_is_user_scoped(
 
     del_resp = await client.delete(f"/api/v1/chat/sessions/{session_id}", headers=other_headers)
     assert del_resp.status_code == 404
+
+

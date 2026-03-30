@@ -45,7 +45,7 @@ async def test_refresh_success_rotates_token(client: AsyncClient, seed_user: Use
     assert "refresh_token" in data
     assert data["refresh_token"] != old_refresh
 
-    old_token_again = await client.post("/auth/refresh", json={"refresh_token": old_refresh})
+    old_token_again=see .env file
     assert old_token_again.status_code == 401
 
 
@@ -54,7 +54,7 @@ async def test_logout_revokes_refresh_token(client: AsyncClient, seed_user: User
     login_response = await client.post(
         "/auth/login", json={"username": "testuser", "password": "testpass"}
     )
-    refresh_token = login_response.json()["refresh_token"]
+    refresh_token=see .env file
 
     logout_response = await client.post("/auth/logout", json={"refresh_token": refresh_token})
     assert logout_response.status_code == 200
@@ -62,3 +62,5 @@ async def test_logout_revokes_refresh_token(client: AsyncClient, seed_user: User
 
     refresh_response = await client.post("/auth/refresh", json={"refresh_token": refresh_token})
     assert refresh_response.status_code == 401
+
+

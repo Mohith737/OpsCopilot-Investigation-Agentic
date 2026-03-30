@@ -13,8 +13,8 @@ from app.auth.passwords import verify_password
 from app.core.config import get_settings
 from app.db.models import User
 
-ACCESS_TOKEN_TTL_SECONDS = 15 * 60
-REFRESH_TOKEN_TTL_DAYS = 7
+ACCESS_TOKEN_TTL_SECONDS=see .env file
+REFRESH_TOKEN_TTL_DAYS=see .env file
 ALGORITHM = "HS256"
 
 
@@ -65,7 +65,7 @@ async def login(
     ):
         return None, None, None
 
-    access_token = _create_access_token(user)
+    access_token=see .env file
     refresh_plain = _new_refresh_token()
     now = _now_db_utc()
     user.refresh_token_hash = _refresh_token_hash(refresh_plain)
@@ -116,3 +116,5 @@ async def logout(db: AsyncSession, refresh_token: str) -> bool:
     user.refresh_token_revoked_at = _now_db_utc()
     await db.commit()
     return True
+
+

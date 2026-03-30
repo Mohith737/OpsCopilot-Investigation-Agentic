@@ -19,9 +19,9 @@ Goals:
 - Response:
 ```json
 {
-  "access_token": "...",
-  "refresh_token": "...",
-  "token_type": "bearer",
+  "access_token": "see .env file",
+  "refresh_token": "see .env file",
+  "token_type": "see .env file",
   "expires_in": 900,
   "user": {
     "id": 1,
@@ -149,3 +149,5 @@ UI behavior:
 - Single application role: `operations_engineer`.
 - Only authenticated active users can access `/api/v1/chat/*`.
 - Session CRUD is user-scoped (owners only).
+
+
